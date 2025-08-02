@@ -244,17 +244,18 @@ class GameHub {
     }
 
     addSampleGames() {
-        // Add sample games (force update to new game list)
-        const hasOldSampleGames = this.games.some(game => game.id.startsWith('sample-'));
-        if (this.games.length === 0 || hasOldSampleGames) {
-            const sampleGames = [
+        // Clear localStorage and force update to new game list with images
+        localStorage.removeItem('gameHubGames');
+        this.games = [];
+        
+        const sampleGames = [
                 {
                     id: 'game-1',
                     name: '塔罗牌占卜',
                     description: '神秘的塔罗牌占卜，探索你的过去、现在和未来',
                     url: 'https://zwaley.github.io/tarot/',
                     category: 'casual',
-                    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=1',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -263,7 +264,7 @@ class GameHub {
                     description: '经典的俄罗斯方块游戏，考验你的反应和策略',
                     url: 'https://zwaley.github.io/russia/',
                     category: 'puzzle',
-                    image: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=2',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -272,7 +273,7 @@ class GameHub {
                     description: '经典的五子棋对战游戏，挑战AI或与朋友对战',
                     url: 'https://zwaley.github.io/wuziqi/',
                     category: 'strategy',
-                    image: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=3',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -281,7 +282,7 @@ class GameHub {
                     description: '古老的围棋游戏，体验千年智慧的博弈',
                     url: 'https://zwaley.github.io/weiqi/',
                     category: 'strategy',
-                    image: 'https://images.unsplash.com/photo-1528819622765-d6bcf132ac11?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=4',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -290,7 +291,7 @@ class GameHub {
                     description: '流行的掼蛋纸牌游戏，单机版AI对战',
                     url: 'https://zwaley.github.io/guandan/',
                     category: 'casual',
-                    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=5',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -299,7 +300,7 @@ class GameHub {
                     description: '刺激的跑酷游戏，挑战你的反应速度',
                     url: 'https://zwaley.github.io/runcool/',
                     category: 'action',
-                    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=6',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -308,7 +309,7 @@ class GameHub {
                     description: '有趣的校园角色测试，看看你是哪种人',
                     url: 'https://zwaley.github.io/meetoo/',
                     category: 'casual',
-                    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=7',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -317,7 +318,7 @@ class GameHub {
                     description: '维护校园正义，成为正义使者！',
                     url: 'https://zwaley.github.io/zysz/',
                     category: 'action',
-                    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=8',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -326,7 +327,7 @@ class GameHub {
                     description: '有趣的测试，看看你适合做方丈吗？',
                     url: 'https://zwaley.github.io/abbot-quiz/',
                     category: 'casual',
-                    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=9',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -335,15 +336,14 @@ class GameHub {
                     description: '探索你的星座奥秘，了解星座运势',
                     url: 'https://zwaley.github.io/stars/',
                     category: 'casual',
-                    image: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=300&fit=crop&crop=center',
+                    image: 'https://picsum.photos/400/300?random=10',
                     addedDate: new Date().toISOString()
                 }
             ];
             
-            this.games = sampleGames;
-            this.saveGames();
-            this.renderGames();
-        }
+        this.games = sampleGames;
+        this.saveGames();
+        this.renderGames();
     }
 
     loadGames() {
