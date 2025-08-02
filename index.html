@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞的VIbe游戏厅</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <h1>飞的VIbe游戏厅</h1>
+                </div>
+                <p>发现并享受精彩的网页小游戏</p>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="搜索游戏..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </section>
+
+            <!-- Game Categories -->
+            <section class="categories">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">全部游戏</button>
+                    <button class="category-tab" data-category="puzzle">益智游戏</button>
+                    <button class="category-tab" data-category="action">动作游戏</button>
+                    <button class="category-tab" data-category="strategy">策略游戏</button>
+                    <button class="category-tab" data-category="casual">休闲游戏</button>
+                </div>
+            </section>
+
+            <!-- Games Grid -->
+            <section class="games-section">
+                <div class="games-grid" id="gamesGrid">
+                    <!-- Game cards will be dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Add Game Button -->
+            <section class="add-game-section">
+                <button class="add-game-btn" id="addGameBtn">
+                    <i class="fas fa-plus"></i>
+                    添加新游戏
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Game Modal -->
+    <div class="modal" id="addGameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>添加新游戏</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="addGameForm">
+                <div class="form-group">
+                    <label for="gameName">游戏名称</label>
+                    <input type="text" id="gameName" required>
+                </div>
+                <div class="form-group">
+                    <label for="gameDescription">游戏描述</label>
+                    <textarea id="gameDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="gameUrl">游戏链接</label>
+                    <input type="url" id="gameUrl" required>
+                </div>
+                <div class="form-group">
+                    <label for="gameCategory">游戏分类</label>
+                    <select id="gameCategory" required>
+                        <option value="puzzle">益智游戏</option>
+                        <option value="action">动作游戏</option>
+                        <option value="strategy">策略游戏</option>
+                        <option value="casual">休闲游戏</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gameImage">游戏图片URL（可选）</label>
+                    <input type="url" id="gameImage">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelBtn">取消</button>
+                    <button type="submit" class="btn-primary">添加游戏</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
