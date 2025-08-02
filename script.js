@@ -29,36 +29,7 @@ class GameHub {
             });
         });
 
-        // Add game modal
-        const addGameBtn = document.getElementById('addGameBtn');
-        const modal = document.getElementById('addGameModal');
-        const closeModal = document.getElementById('closeModal');
-        const cancelBtn = document.getElementById('cancelBtn');
-        const addGameForm = document.getElementById('addGameForm');
-
-        addGameBtn.addEventListener('click', () => this.openModal());
-        closeModal.addEventListener('click', () => this.closeModal());
-        cancelBtn.addEventListener('click', () => this.closeModal());
-        
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                this.closeModal();
-            }
-        });
-
-        // Form submission
-        addGameForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.addGame();
-        });
-
-        // Escape key to close modal
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                this.closeModal();
-            }
-        });
+        // Note: Add game modal functionality removed
     }
 
     setActiveCategory(category) {
