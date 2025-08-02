@@ -107,36 +107,7 @@ class GameHub {
         this.showNotification('游戏添加成功！', 'success');
     }
 
-    deleteGame(gameId) {
-        if (confirm('确定要删除这个游戏吗？')) {
-            this.games = this.games.filter(game => game.id !== gameId);
-            this.saveGames();
-            this.renderGames();
-            this.showNotification('游戏已删除', 'info');
-        }
-    }
 
-    editGame(gameId) {
-        const game = this.games.find(g => g.id === gameId);
-        if (game) {
-            // Populate form with existing data
-            document.getElementById('gameName').value = game.name;
-            document.getElementById('gameDescription').value = game.description;
-            document.getElementById('gameUrl').value = game.url;
-            document.getElementById('gameCategory').value = game.category;
-            document.getElementById('gameImage').value = game.image || '';
-            
-            // Change form to edit mode
-            const form = document.getElementById('addGameForm');
-            form.dataset.editId = gameId;
-            
-            // Update modal title and button text
-            document.querySelector('.modal-header h3').textContent = '编辑游戏';
-            document.querySelector('.btn-primary').textContent = '保存更改';
-            
-            this.openModal();
-        }
-    }
 
     playGame(gameUrl, gameName) {
         // Store return URL for the game to come back to GameHub
@@ -213,14 +184,6 @@ class GameHub {
                         <i class="${gameIcons[game.category] || 'fas fa-gamepad'}"></i>
                     </div>
                 </div>
-                <div class="game-actions">
-                    <button class="action-btn edit-btn" data-game-id="${game.id}" title="编辑">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="action-btn delete-btn" data-game-id="${game.id}" title="删除">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
                 <div class="game-info">
                     <h3 class="game-title">${game.name}</h3>
                     <p class="game-description">${game.description || '暂无描述'}</p>
@@ -234,30 +197,11 @@ class GameHub {
         // Play game on card click
         document.querySelectorAll('.game-card').forEach(card => {
             card.addEventListener('click', (e) => {
-                // Don't trigger if clicking on action buttons
-                if (e.target.closest('.game-actions')) return;
-                
                 const gameId = card.dataset.gameId;
                 const game = this.games.find(g => g.id === gameId);
                 if (game) {
                     this.playGame(game.url, game.name);
                 }
-            });
-        });
-        
-        // Edit buttons
-        document.querySelectorAll('.edit-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                this.editGame(btn.dataset.gameId);
-            });
-        });
-        
-        // Delete buttons
-        document.querySelectorAll('.delete-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                this.deleteGame(btn.dataset.gameId);
             });
         });
     }
@@ -310,7 +254,7 @@ class GameHub {
                     description: '神秘的塔罗牌占卜，探索你的过去、现在和未来',
                     url: 'https://zwaley.github.io/tarot/',
                     category: 'casual',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -319,7 +263,7 @@ class GameHub {
                     description: '经典的俄罗斯方块游戏，考验你的反应和策略',
                     url: 'https://zwaley.github.io/russia/',
                     category: 'puzzle',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -328,7 +272,7 @@ class GameHub {
                     description: '经典的五子棋对战游戏，挑战AI或与朋友对战',
                     url: 'https://zwaley.github.io/wuziqi/',
                     category: 'strategy',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -337,7 +281,7 @@ class GameHub {
                     description: '古老的围棋游戏，体验千年智慧的博弈',
                     url: 'https://zwaley.github.io/weiqi/',
                     category: 'strategy',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1528819622765-d6bcf132ac11?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -346,7 +290,7 @@ class GameHub {
                     description: '流行的掼蛋纸牌游戏，单机版AI对战',
                     url: 'https://zwaley.github.io/guandan/',
                     category: 'casual',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -355,7 +299,7 @@ class GameHub {
                     description: '刺激的跑酷游戏，挑战你的反应速度',
                     url: 'https://zwaley.github.io/runcool/',
                     category: 'action',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -364,7 +308,7 @@ class GameHub {
                     description: '有趣的校园角色测试，看看你是哪种人',
                     url: 'https://zwaley.github.io/meetoo/',
                     category: 'casual',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -373,7 +317,7 @@ class GameHub {
                     description: '维护校园正义，成为正义使者！',
                     url: 'https://zwaley.github.io/zysz/',
                     category: 'action',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -382,7 +326,7 @@ class GameHub {
                     description: '有趣的测试，看看你适合做方丈吗？',
                     url: 'https://zwaley.github.io/abbot-quiz/',
                     category: 'casual',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 },
                 {
@@ -391,7 +335,7 @@ class GameHub {
                     description: '探索你的星座奥秘，了解星座运势',
                     url: 'https://zwaley.github.io/stars/',
                     category: 'casual',
-                    image: '',
+                    image: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=300&fit=crop&crop=center',
                     addedDate: new Date().toISOString()
                 }
             ];
