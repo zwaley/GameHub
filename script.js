@@ -300,7 +300,16 @@ class GameHub {
         this.games = [];
         
         const sampleGames = [
-                {
+            {
+                id: 'game-minesweeper',
+                name: '扫雷',
+                description: '经典的扫雷游戏，通过数字提示找出所有地雷',
+                url: 'https://zwaley.github.io/Dig-mines/',
+                category: 'puzzle',
+                image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkTWluZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzOTlmZjtzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDY2Y2M7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZ3JhZE1pbmUpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjAwLDE1MCkiPjxyZWN0IHg9Ii02MCIgeT0iLTYwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2Y1ZjVmNSIgcng9IjgiIHN0cm9rZT0iIzk5OSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgc3Ryb2tlPSIjY2NjIiBzdHJva2Utd2lkdGg9IjEiPjxsaW5lIHgxPSItNDAiIHkxPSItNjAiIHgyPSItNDAiIHkyPSI2MCIvPjxsaW5lIHgxPSItMjAiIHkxPSItNjAiIHgyPSItMjAiIHkyPSI2MCIvPjxsaW5lIHgxPSIwIiB5MT0iLTYwIiB4Mj0iMCIgeTI9IjYwIi8+PGxpbmUgeDE9IjIwIiB5MT0iLTYwIiB4Mj0iMjAiIHkyPSI2MCIvPjxsaW5lIHgxPSI0MCIgeTE9Ii02MCIgeDI9IjQwIiB5Mj0iNjAiLz48bGluZSB4MT0iLTYwIiB5MT0iLTQwIiB4Mj0iNjAiIHkyPSItNDAiLz48bGluZSB4MT0iLTYwIiB5MT0iLTIwIiB4Mj0iNjAiIHkyPSItMjAiLz48bGluZSB4MT0iLTYwIiB5MT0iMCIgeDI9IjYwIiB5Mj0iMCIvPjxsaW5lIHgxPSItNjAiIHkxPSIyMCIgeDI9IjYwIiB5Mj0iMjAiLz48bGluZSB4MT0iLTYwIiB5MT0iNDAiIHgyPSI2MCIgeTI9IjQwIi8+PC9nPjxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiNlZWUiIHN0cm9rZT0iIzk5OSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHJlY3QgeD0iLTMwIiB5PSItNTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2VlZSIgc3Ryb2tlPSIjOTk5IiBzdHJva2Utd2lkdGg9IjEiLz48cmVjdCB4PSItMTAiIHk9Ii01MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjZWVlIiBzdHJva2U9IiM5OTkiIHN0cm9rZS13aWR0aD0iMSIvPjx0ZXh0IHg9Ii00MCIgeT0iLTM1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMDA2NmNjIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+MTwvdGV4dD48dGV4dCB4PSItMjAiIHk9Ii0zNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzAwOTkwMCIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTAiIGN5PSItMzAiIHI9IjYiIGZpbGw9IiNmZjMzMzMiLz48Y2lyY2xlIGN4PSIxMCIgY3k9Ii0zMCIgcj0iMyIgZmlsbD0iIzMzMyIvPjxwYXRoIGQ9Ik0gNSAtMzUgTCAxNSAtMzUgTSA1IC0yNSBMIDE1IC0yNSBNIDUgLTM1IEwgNSAtMjUgTSAxNSAtMzUgTCAxNSAtMjUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxIi8+PHRleHQgeD0iMCIgeT0iODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0iQXJpYWwiPuaJq+mbtzwvdGV4dD48L2c+PC9zdmc+',
+                addedDate: new Date().toISOString()
+            },
+            {
                     id: 'game-0',
                     name: '空当接龙',
                     description: '经典的空当接龙纸牌游戏，考验策略和技巧',
@@ -312,7 +321,7 @@ class GameHub {
 
                 {
                     id: 'game-1',
-                    name: '塔罗牌占卜',
+                    name: '塔罗牌',
                     description: '神秘的塔罗牌占卜，探索你的过去、现在和未来',
                     url: 'https://zwaley.github.io/tarot/',
                     category: 'casual',
@@ -367,7 +376,7 @@ class GameHub {
                 {
                     id: 'game-7',
                     name: '校园角色测试',
-                    description: '有趣的校园角色测试，看看你是哪种人',
+                    description: 'metoo横行的时代.测测你是哪种人',
                     url: 'https://zwaley.github.io/meetoo/',
                     category: 'casual',
                     image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkNyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2ZmZjYztzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzM2NjZmY7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZ3JhZDcpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjAwLDE1MCkiPjxyZWN0IHg9Ii00MCIgeT0iLTUwIiB3aWR0aD0iODAiIGhlaWdodD0iNjAiIGZpbGw9IndoaXRlIiByeD0iMTAiIHN0cm9rZT0iIzMzOTlmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PGNpcmNsZSBjeD0iLTIwIiBjeT0iLTM1IiByPSI4IiBmaWxsPSIjZmZjYzY2Ii8+PGVsbGlwc2UgY3g9Ii0yMCIgY3k9Ii0yMCIgcng9IjYiIHJ5PSI4IiBmaWxsPSIjMzM5OWZmIi8+PGNpcmNsZSBjeD0iMjAiIGN5PSItMzUiIHI9IjgiIGZpbGw9IiNmZmNjNjYiLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSItMjAiIHJ4PSI2IiByeT0iOCIgZmlsbD0iI2ZmOTkzMyIvPjx0ZXh0IHg9Ii0yMCIgeT0iLTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMzMzMiIGZvbnQtc2l6ZT0iMTAiPkE8L3RleHQ+PHRleHQgeD0iMjAiIHk9Ii01IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzMzIiBmb250LXNpemU9IjEwIj5CPC90ZXh0Pjx0ZXh0IHg9IjAiIHk9IjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzMzIiBmb250LXNpemU9IjEwIj7mgqjmmK/lk6rkuIDnp43kuq7vvJ88L3RleHQ+PHRleHQgeD0iMCIgeT0iNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0iQXJpYWwiPuagoeWbreaWueiJsua1i+ivlTwvdGV4dD48L2c+PC9zdmc+',
@@ -384,7 +393,7 @@ class GameHub {
                 },
                 {
                     id: 'game-9',
-                    name: '方丈适合度测试',
+                    name: '你是哪种方丈',
                     description: '有趣的测试，看看你适合做方丈吗？',
                     url: 'https://zwaley.github.io/abbot-quiz/',
                     category: 'casual',
@@ -407,6 +416,15 @@ class GameHub {
                     url: 'https://zwaley.github.io/snake/',
                     category: 'action',
                     image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkMTEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NmZmNjY7c3RvcC1vcGFjaXR5OjEiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDA5OTAwO3N0b3Atb3BhY2l0eToxIiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWQxMSkiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDAsMTUwKSI+PHJlY3QgeD0iLTgwIiB5PSItMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzMzZmYzMyIgcng9IjMiLz48cmVjdCB4PSItNjAiIHk9Ii0xMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDBkZDAwIiByeD0iMyIvPjxyZWN0IHg9Ii00MCIgeT0iLTEwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMwMGRkMDAiIHJ4PSIzIi8+PHJlY3QgeD0iLTIwIiB5PSItMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzAwZGQwMCIgcng9IjMiLz48cmVjdCB4PSIwIiB5PSItMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzAwZGQwMCIgcng9IjMiLz48cmVjdCB4PSIyMCIgeT0iLTEwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMwMGRkMDAiIHJ4PSIzIi8+PHJlY3QgeD0iNDAiIHk9Ii0xMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDBkZDAwIiByeD0iMyIvPjxyZWN0IHg9IjYwIiB5PSItMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzAwZGQwMCIgcng9IjMiLz48Y2lyY2xlIGN4PSI3NSIgY3k9Ii01IiByPSIzIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iNzUiIGN5PSItNSIgcj0iMSIgZmlsbD0iIzAwMCIvPjxyZWN0IHg9IjQwIiB5PSIzMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjZmYzMzMzIiByeD0iMyIvPjx0ZXh0IHg9IjAiIHk9IjcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj7osKrlkIPom5c8L3RleHQ+PC9nPjwvc3ZnPg==',
+                    addedDate: new Date().toISOString()
+                },
+                {
+                    id: 'game-ai-interviewer',
+                    name: 'AI面试官',
+                    description: '科技行业面试模拟游戏，提升你的面试技能',
+                    url: 'https://zwaley.github.io/AI-/',
+                    category: 'casual',
+                    image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkQUkiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NjMzZmY7c3RvcC1vcGFjaXR5OjEiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzMwMGZmO3N0b3Atb3BhY2l0eToxIiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWRBSSkiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDAsMTUwKSI+PHJlY3QgeD0iLTgwIiB5PSItNjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZjVmNWY1IiByeD0iMTUiIHN0cm9rZT0iIzMzMDBmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PGNpcmNsZSBjeD0iLTQwIiBjeT0iLTMwIiByPSIyMCIgZmlsbD0iI2ZmY2M2NiIvPjxjaXJjbGUgY3g9Ii01MCIgY3k9Ii0zNSIgcj0iMyIgZmlsbD0iIzMzMyIvPjxjaXJjbGUgY3g9Ii0zMCIgY3k9Ii0zNSIgcj0iMyIgZmlsbD0iIzMzMyIvPjxwYXRoIGQ9Ik0gLTQ1IC0yNSBRIC00MCAyMCAtMzUgLTI1IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9Ii0yMCIgeT0iLTQ1IiB3aWR0aD0iODAiIGhlaWdodD0iNDAiIGZpbGw9IiNmZmZmZmYiIHJ4PSI1IiBzdHJva2U9IiM2NjMzZmYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjIwIiB5PSItMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM2NjMzZmYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIj7nrpfmtYHooYzkuJo8L3RleHQ+PHRleHQgeD0iMjAiIHk9Ii0xNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzY2MzNmZiIgZm9udC1zaXplPSIxMiI+6Z2i6K+V5qih5ouf5ri45oiPPC90ZXh0Pjx0ZXh0IHg9IjIwIiB5PSIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjYzM2ZmIiBmb250LXNpemU9IjEwIj7mj5DljYfpnaLor5XmioDog708L3RleHQ+PHJlY3QgeD0iLTcwIiB5PSIxNSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjNjYzM2ZmIiByeD0iNSIvPjx0ZXh0IHg9Ii01NSIgeT0iMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjEwIj5BPC90ZXh0PjxyZWN0IHg9Ii0zNSIgeT0iMTUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzMzMDBmZiIgcng9IjUiLz48dGV4dCB4PSItMjAiIHk9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMCI+QjwvdGV4dD48cmVjdCB4PSIwIiB5PSIxNSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjNjYzM2ZmIiByeD0iNSIvPjx0ZXh0IHg9IjE1IiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTAiPkM8L3RleHQ+PHJlY3QgeD0iMzUiIHk9IjE1IiB3aWR0aD0iMzAiIGhlaWdodD0iMjAiIGZpbGw9IiMzMzAwZmYiIHJ4PSI1Ii8+PHRleHQgeD0iNTAiIHk9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMCI+RDwvdGV4dD48dGV4dCB4PSIwIiB5PSI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtZmFtaWx5PSJBcmlhbCI+QUnpnaLor5Xlrpg8L3RleHQ+PC9nPjwvc3ZnPg==',
                     addedDate: new Date().toISOString()
                 }
             ];
