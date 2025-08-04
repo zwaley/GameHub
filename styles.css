@@ -42,8 +42,8 @@ body {
     margin: 0;
 }
 
-/* Search and Categories Section */
-.search-categories-section {
+/* Categories Section */
+.categories-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,11 +55,17 @@ body {
     position: relative;
     width: 100%;
     max-width: 400px;
+    margin-top: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.search-container.hidden {
+    display: none;
 }
 
 .search-input {
     width: 100%;
-    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    padding: 0.75rem 3rem 0.75rem 2.5rem;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 25px;
     font-size: 0.9rem;
@@ -88,6 +94,26 @@ body {
     pointer-events: none;
 }
 
+.search-close-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.search-close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
 /* Main Content */
 .main-content {
     padding-bottom: 2rem;
@@ -112,6 +138,7 @@ body {
 .category-tabs {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
@@ -140,6 +167,29 @@ body {
     color: #667eea;
     border-color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
+}
+
+.search-toggle-btn {
+    padding: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 /* Games Grid */
@@ -416,6 +466,10 @@ body {
         max-width: 400px;
     }
     
+    .search-container.hidden {
+        display: none !important;
+    }
+    
     .welcome-section h2 {
         font-size: 2rem;
     }
@@ -429,12 +483,16 @@ body {
         font-size: 0.9rem;
     }
     
+    .search-toggle-btn {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 0.8rem;
+    }
+    
     .games-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1rem;
     }
-    
-
     
     .form-actions {
         flex-direction: column;

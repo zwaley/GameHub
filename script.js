@@ -21,6 +21,26 @@ class GameHub {
             this.renderGames();
         });
 
+        // Search toggle functionality
+        const searchToggleBtn = document.getElementById('searchToggleBtn');
+        const searchContainer = document.getElementById('searchContainer');
+        const searchCloseBtn = document.getElementById('searchCloseBtn');
+
+        searchToggleBtn.addEventListener('click', () => {
+            this.showSearchBox();
+        });
+
+        searchCloseBtn.addEventListener('click', () => {
+            this.hideSearchBox();
+        });
+
+        // Hide search box when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchContainer.contains(e.target) && !searchToggleBtn.contains(e.target)) {
+                this.hideSearchBox();
+            }
+        });
+
         // Category tabs
         const categoryTabs = document.querySelectorAll('.category-tab');
         categoryTabs.forEach(tab => {
@@ -41,6 +61,26 @@ class GameHub {
         });
         document.querySelector(`[data-category="${category}"]`).classList.add('active');
         
+        this.renderGames();
+    }
+
+    showSearchBox() {
+        const searchContainer = document.getElementById('searchContainer');
+        const searchInput = document.getElementById('searchInput');
+        
+        searchContainer.classList.remove('hidden');
+        setTimeout(() => {
+            searchInput.focus();
+        }, 100);
+    }
+
+    hideSearchBox() {
+        const searchContainer = document.getElementById('searchContainer');
+        const searchInput = document.getElementById('searchInput');
+        
+        searchContainer.classList.add('hidden');
+        searchInput.value = '';
+        this.searchTerm = '';
         this.renderGames();
     }
 
