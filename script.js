@@ -4,6 +4,8 @@ class GameHub {
         this.games = this.loadGames();
         this.currentCategory = 'all';
         this.searchTerm = '';
+        // 图片模式配置：'svg' 使用SVG图标，'random' 使用随机网络图片
+        this.imageMode = localStorage.getItem('gameHubImageMode') || 'svg';
         this.init();
     }
 
@@ -47,6 +49,12 @@ class GameHub {
             tab.addEventListener('click', (e) => {
                 this.setActiveCategory(e.target.dataset.category);
             });
+        });
+
+        // Image mode toggle
+        const imageModeBtn = document.getElementById('imageModeBtn');
+        imageModeBtn.addEventListener('click', () => {
+            this.toggleImageMode();
         });
 
         // Note: Add game modal functionality removed
@@ -184,14 +192,23 @@ class GameHub {
             casual: 'fas fa-smile'
         };
         
+        let imageContent = '';
+        if (this.imageMode === 'random') {
+            // 使用随机网络图片
+            const randomImageUrl = this.getRandomImageUrl();
+            imageContent = `<img src="${randomImageUrl}" alt="${game.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
+        } else {
+            // 使用SVG图标模式
+            imageContent = game.image ? 
+                `<img src="${game.image}" alt="${game.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">` : 
+                '';
+        }
+        
         return `
             <div class="game-card" data-game-id="${game.id}">
                 <div class="game-image">
-                    ${game.image ? 
-                        `<img src="${game.image}" alt="${game.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">` : 
-                        ''
-                    }
-                    <div class="game-icon" style="${game.image ? 'display: none;' : ''}">
+                    ${imageContent}
+                    <div class="game-icon" style="${(this.imageMode === 'svg' && game.image) ? 'display: none;' : ''}">
                         <i class="${gameIcons[game.category] || 'fas fa-gamepad'}"></i>
                     </div>
                 </div>
@@ -215,6 +232,24 @@ class GameHub {
                 }
             });
         });
+    }
+
+    getRandomImageUrl() {
+        // 使用Picsum Photos提供随机图片
+        const width = 400;
+        const height = 300;
+        const randomId = Math.floor(Math.random() * 1000) + 1;
+        return `https://picsum.photos/${width}/${height}?random=${randomId}&t=${Date.now()}`;
+    }
+
+    toggleImageMode() {
+        this.imageMode = this.imageMode === 'svg' ? 'random' : 'svg';
+        localStorage.setItem('gameHubImageMode', this.imageMode);
+        this.renderGames();
+        this.showNotification(
+            `已切换到${this.imageMode === 'svg' ? 'SVG图标' : '随机图片'}模式`, 
+            'success'
+        );
     }
 
     showNotification(message, type = 'info') {
