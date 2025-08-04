@@ -261,6 +261,16 @@ class GameHub {
         
         const sampleGames = [
                 {
+                    id: 'game-0',
+                    name: '空当接龙',
+                    description: '经典的空当接龙纸牌游戏，考验策略和技巧',
+                    url: 'https://zwaley.github.io/FreeCell/',
+                    category: 'puzzle',
+                    image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkMCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzOTlmZjtzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDY2Y2M7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZ3JhZDApIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjAwLDE1MCkiPjxyZWN0IHg9Ii02MCIgeT0iLTQwIiB3aWR0aD0iMzAiIGhlaWdodD0iNDUiIGZpbGw9IndoaXRlIiByeD0iNCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEiLz48cmVjdCB4PSItMjUiIHk9Ii00MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjQ1IiBmaWxsPSJ3aGl0ZSIgcng9IjQiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxIi8+PHJlY3QgeD0iMTAiIHk9Ii00MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjQ1IiBmaWxsPSJ3aGl0ZSIgcng9IjQiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxIi8+PHJlY3QgeD0iNDUiIHk9Ii00MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjQ1IiBmaWxsPSJ3aGl0ZSIgcng9IjQiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxIi8+PHRleHQgeD0iLTQ1IiB5PSItMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJlZCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiPks8L3RleHQ+PHRleHQgeD0iLTEwIiB5PSItMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImJsYWNrIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+QTwvdGV4dD48dGV4dCB4PSIyNSIgeT0iLTEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZWQiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIj5RPC90ZXh0Pjx0ZXh0IHg9IjYwIiB5PSItMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImJsYWNrIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+SjwvdGV4dD48cGF0aCBkPSJNIC01MiAtMjUgTCAtMzggLTI1IiBzdHJva2U9InJlZCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTSAtMTcgLTI1IEwgLTMgLTI1IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNIDE4IC0yNSBMIDMyIC0yNSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0gNTMgLTI1IEwgNjcgLTI1IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSItMzAiIHk9IjE1IiB3aWR0aD0iNjAiIGhlaWdodD0iMTUiIGZpbGw9IiNmMGYwZjAiIHJ4PSIzIiBzdHJva2U9IiNjY2MiIHN0cm9rZS13aWR0aD0iMSIvPjx0ZXh0IHg9IjAiIHk9IjI3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjY2IiBmb250LXNpemU9IjEwIj5GcmVlQ2VsbDwvdGV4dD48dGV4dCB4PSIwIiB5PSI1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJBcmlhbCI+56m65b2T5o6l6b6ZPC90ZXh0PjwvZz48L3N2Zz4=',
+                    addedDate: new Date().toISOString()
+                },
+
+                {
                     id: 'game-1',
                     name: '塔罗牌占卜',
                     description: '神秘的塔罗牌占卜，探索你的过去、现在和未来',
