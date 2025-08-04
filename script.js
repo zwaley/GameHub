@@ -301,6 +301,15 @@ class GameHub {
         
         const sampleGames = [
             {
+                id: 'game-10',
+                name: '星运占卜',
+                description: '探索你的星座奥秘，了解星座运势',
+                url: 'https://zwaley.github.io/stars/',
+                category: 'casual',
+                image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkMTAiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NjMzZmY7c3RvcC1vcGFjaXR5OjEiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzMwMGZmO3N0b3Atb3BhY2l0eToxIiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWQxMCkiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDAsMTUwKSI+PHBhdGggZD0iTSAwIC0zMCBMIDggLTEwIEwgMzAgLTEwIEwgMTIgNSBMIDIwIDI1IEwgMCAxNSBMIC0yMCAyNSBMIC0xMiA1IEwgLTMwIC0xMCBMIC04IC0xMCBaIiBmaWxsPSIjZmZkZDMzIiBzdHJva2U9IiNmZmJiMDAiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9Ii0yNSIgY3k9Ii0yNSIgcj0iMyIgZmlsbD0iI2ZmZmZmZiIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iLTIwIiByPSIyIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iLTM1IiBjeT0iMTAiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjE1IiByPSIzIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iLTE1IiBjeT0iMzUiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIyNSIgY3k9IjMwIiByPSIyIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iMCIgY3k9Ii00NSIgcj0iMiIgZmlsbD0iI2ZmZmZmZiIvPjx0ZXh0IHg9IjAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj7mmJ/ov5Dljavor5U8L3RleHQ+PC9nPjwvc3ZnPg==',
+                addedDate: new Date().toISOString()
+            },
+            {
                 id: 'game-minesweeper',
                 name: '扫雷',
                 description: '经典的扫雷游戏，通过数字提示找出所有地雷',
@@ -398,15 +407,6 @@ class GameHub {
                     url: 'https://zwaley.github.io/abbot-quiz/',
                     category: 'casual',
                     image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkOSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZGQ5OTtzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmJiMzM7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZ3JhZDkpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjAwLDE1MCkiPjxyZWN0IHg9Ii00MCIgeT0iLTYwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmNjNjYiIHJ4PSIxNSIgc3Ryb2tlPSIjZmY5OTMzIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIwIiBjeT0iLTQwIiByPSIxMiIgZmlsbD0iI2ZmY2M2NiIvPjxlbGxpcHNlIGN4PSIwIiBjeT0iLTIwIiByeD0iMTUiIHJ5PSIyMCIgZmlsbD0iI2ZmOTkzMyIvPjxyZWN0IHg9Ii0yMCIgeT0iLTMwIiB3aWR0aD0iMTIiIGhlaWdodD0iMjAiIGZpbGw9IiNmZmNjNjYiIHJ4PSI2Ii8+PHJlY3QgeD0iOCIgeT0iLTMwIiB3aWR0aD0iMTIiIGhlaWdodD0iMjAiIGZpbGw9IiNmZmNjNjYiIHJ4PSI2Ii8+PGNpcmNsZSBjeD0iLTEwIiBjeT0iLTQ1IiByPSIzIiBmaWxsPSIjMzMzIi8+PGNpcmNsZSBjeD0iMTAiIGN5PSItNDUiIHI9IjMiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNIC0xMCAtMzUgUSAwIC0zMCAxMCAtMzUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHRleHQgeD0iMCIgeT0iMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMzMzMiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+5Y2X5peg6Zi/5byl6LGh5LqLPC90ZXh0Pjx0ZXh0IHg9IjAiIHk9IjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj7mlrnkuIjpgILlkIjluqbmtYvor5U8L3RleHQ+PC9nPjwvc3ZnPg==',
-                    addedDate: new Date().toISOString()
-                },
-                {
-                    id: 'game-10',
-                    name: '星运占卜',
-                    description: '探索你的星座奥秘，了解星座运势',
-                    url: 'https://zwaley.github.io/stars/',
-                    category: 'casual',
-                    image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkMTAiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NjMzZmY7c3RvcC1vcGFjaXR5OjEiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMzMwMGZmO3N0b3Atb3BhY2l0eToxIiAvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWQxMCkiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDAsMTUwKSI+PHBhdGggZD0iTSAwIC0zMCBMIDggLTEwIEwgMzAgLTEwIEwgMTIgNSBMIDIwIDI1IEwgMCAxNSBMIC0yMCAyNSBMIC0xMiA1IEwgLTMwIC0xMCBMIC04IC0xMCBaIiBmaWxsPSIjZmZkZDMzIiBzdHJva2U9IiNmZmJiMDAiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9Ii0yNSIgY3k9Ii0yNSIgcj0iMyIgZmlsbD0iI2ZmZmZmZiIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iLTIwIiByPSIyIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iLTM1IiBjeT0iMTAiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIzNSIgY3k9IjE1IiByPSIzIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iLTE1IiBjeT0iMzUiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIyNSIgY3k9IjMwIiByPSIyIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iMCIgY3k9Ii00NSIgcj0iMiIgZmlsbD0iI2ZmZmZmZiIvPjx0ZXh0IHg9IjAiIHk9IjU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj7mmJ/ov5Dljavor5U8L3RleHQ+PC9nPjwvc3ZnPg==',
                     addedDate: new Date().toISOString()
                 },
                 {
