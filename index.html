@@ -20,18 +20,25 @@
                 </div>
             </section>
 
-            <!-- Search and Categories Section -->
-            <section class="search-categories-section">
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="搜索游戏..." class="search-input">
-                    <i class="fas fa-search search-icon"></i>
-                </div>
+            <!-- Categories Section -->
+            <section class="categories-section">
                 <div class="category-tabs">
                     <button class="category-tab active" data-category="all">全部游戏</button>
                     <button class="category-tab" data-category="puzzle">益智游戏</button>
                     <button class="category-tab" data-category="action">动作游戏</button>
                     <button class="category-tab" data-category="strategy">策略游戏</button>
                     <button class="category-tab" data-category="casual">休闲游戏</button>
+                    <button class="search-toggle-btn" id="searchToggleBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <!-- Hidden search container -->
+                <div class="search-container hidden" id="searchContainer">
+                    <input type="text" id="searchInput" placeholder="搜索游戏..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                    <button class="search-close-btn" id="searchCloseBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </section>
 
