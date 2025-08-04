@@ -208,14 +208,19 @@ class GameHub {
             <div class="game-card" data-game-id="${game.id}">
                 <div class="game-image">
                     ${imageContent}
-                    <div class="game-icon" style="${(this.imageMode === 'svg' && game.image) ? 'display: none;' : ''}">
+                    <div class="game-icon" style="${(this.imageMode === 'svg' && game.image) || this.imageMode === 'random' ? 'display: none;' : ''}">
                         <i class="${gameIcons[game.category] || 'fas fa-gamepad'}"></i>
                     </div>
                 </div>
                 <div class="game-info">
-                    <h3 class="game-title">${game.name}</h3>
+                    <div class="game-header">
+                        <h3 class="game-title">${game.name}</h3>
+                        <div class="game-meta">
+                            <i class="game-type-icon ${gameIcons[game.category] || 'fas fa-gamepad'}"></i>
+                            <span class="game-category">${categoryNames[game.category] || game.category}</span>
+                        </div>
+                    </div>
                     <p class="game-description">${game.description || '暂无描述'}</p>
-                    <span class="game-category">${categoryNames[game.category] || game.category}</span>
                 </div>
             </div>
         `;
