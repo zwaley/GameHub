@@ -499,6 +499,10 @@ body {
         display: none !important;
     }
     
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
     .welcome-section h2 {
         font-size: 2rem;
     }
@@ -536,6 +540,10 @@ body {
     
     .games-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .logo h1 {
+        font-size: 1.6rem;
     }
     
     .welcome-section h2 {
